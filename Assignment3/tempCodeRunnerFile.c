@@ -1,1 +1,0 @@
-/ Initial index of first subarray
