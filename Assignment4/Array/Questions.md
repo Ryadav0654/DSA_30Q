@@ -11,6 +11,7 @@ with the order of the balls, with the order of the colours being red, white and 
 coloured balls come first then the white coloured balls and then the blue coloured balls).
 
 ## Code
+
 ```c
 #include<stdio.h>
 #include<stdlib.h>
@@ -23,7 +24,7 @@ void ArrangeBall(char arr[], int size){
 
     while (mid <= high)
     {
-        
+
     switch (arr[mid])
     {
     case 'r':
@@ -33,11 +34,11 @@ void ArrangeBall(char arr[], int size){
         low += 1;
         mid += 1;
         break;
-    
+
     case 'w':
         mid += 1;
         break;
-    
+
     case 'b' :
         char temp2 = arr[high];
         arr[high] = arr[mid];
@@ -46,7 +47,7 @@ void ArrangeBall(char arr[], int size){
         break;
     }
     }
-    
+
 }
 
 void Print(char arr[], int size){
@@ -96,8 +97,9 @@ Two arrays are said to be equal if:
 
 ● If there are repetitions, then counts of repeated elements must also be the same for two arrays to be equal.
 
-## Code 
-```C 
+## Code
+
+```C
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -177,6 +179,7 @@ int main(int argc, char const *argv[])
 Given the arrival and departure times of all trains that reach a railway station, the task is to find the minimum number of platforms required for the railway station so that no train waits. We are given two arrays that represent the arrival and departure times of trains that stop.
 
 ## Code
+
 ```C
 
 ```
@@ -196,6 +199,7 @@ If two numbers have the same frequency then the number with a larger value shoul
 Write a code to get an array as input from the user and use linear search to search for an element. Also write it’s time complexity.
 
 ## Code
+
 ```C
 #include<stdio.h>
 #include<stdlib.h>
@@ -240,14 +244,121 @@ int main(int argc, char const *argv[])
 
 ```
 
+```text
+Time complexity: O(n);
+```
+
 ### Question 8-
 
 Write a code to get an array as input from the user and use binary search to search for an element. Also write it’s time complexity.
 
+## Code
+
+```C
+#include<stdio.h>
+#include<stdlib.h>
+
+int BinarySearch(int arr[], int size, int key){
+
+    int s = 0;
+    int e = size -1;
+    int m = s+(e-s)/2;
+
+    while( s <= e){
+
+        if(arr[m] == key){
+            return 1;
+        }else if(arr[m] < key){
+            s = m + 1;
+        }else{
+            e = m - 1;
+        }
+
+        m = s+(e-s)/2;
+    }
+
+    return 0;
+}
+
+int main(int argc, char const *argv[])
+{
+    int n;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    int *arr = (int *)malloc(n * sizeof(int));
+
+    printf("Enter the element of arr1: \n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    int key;
+    printf("Enter the search element or key: ");
+    scanf("%d", &key);
+
+    int ans = BinarySearch(arr, n, key);
+    if(ans){
+        printf("key is present.\n");
+
+    }else{
+        printf("key is not present.\n");
+    }
+
+    return 0;
+}
+
+```
+
+```text
+Time complexity: O(log(n))
+```
+
 ### Question 9-
 
-Given an array of n elements that contains elements from 0 to n-1, with any of these numbers appearing any number of times. Find these repeating numbers in O(n) and use
-only constant memory space.
+Given an array of n elements that contains elements from 0 to n-1, with any of these numbers appearing any number of times. Find these repeating numbers in O(n) and use only constant memory space.
+
+## Code
+
+```C
+#include<stdio.h>
+#include<stdlib.h>
+int repeatingElement(int *arr, int size){
+
+    for(int i=0;i<size;i++){
+        int index=arr[i]%size;
+        arr[index]+=size;
+    }
+    for(int i=0;i<size;i++){
+        if(arr[i]/size>=2){
+            printf("%d ",i);
+        }
+    }
+
+
+}
+
+int main(int argc, char const *argv[])
+{
+    int n;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    int *arr = (int *)malloc(n * sizeof(int));
+
+    printf("Enter the element of arr1: \n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    repeatingElement(arr,n);
+
+
+
+    return 0;
+}
+
+
+```
 
 ### Question 10-
 
