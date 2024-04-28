@@ -4,7 +4,7 @@ int findSmallestMissing(int *nums, int start, int end );
 
 int main(int argc, char const *argv[])
 {
-    int arr[] = { 0, 1, 2, 3, 4, 5, 6 };
+    int arr[] = { 0, 1, 2, 3, 4, 6 };
     int n = sizeof(arr) / sizeof(arr[0]);
  
     int start = 0;

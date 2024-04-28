@@ -4,8 +4,8 @@ int binarySearch(int nums[], int n, int target, int searchFirst);
 
 int main()
 {
-    int nums[] = {2, 5, 5, 5, 6, 6, 8, 9, 9, 9};
-    int target = 5;
+    int nums[] = {2, 6, 6, 5, 6, 6, 8, 9, 9, 9};
+    int target = 6;
 
     int n = sizeof(nums) / sizeof(nums[0]);
 

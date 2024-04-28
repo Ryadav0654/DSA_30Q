@@ -73,7 +73,7 @@ void quickSort(int *arr, int s, int e)
 int main(int argc, char const *argv[])
 {
 
-    int arr[] = { 9, -3, 5, 2, 6, 8, -6, 1, 3 };
+    int arr[] = { 9, -3, 5, -2, 6, 8, -6, 1, 3, 12, 3 };
     int n = sizeof(arr)/sizeof(arr[0]);
     quickSort(arr, 0, n-1);
 
